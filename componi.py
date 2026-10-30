@@ -16,6 +16,7 @@ PAGINE = RADICE / "sorgenti" / "pagine"
 PIATTAFORMA = "https://formazione.arsdocendi.it/login/"
 PRIVACY = "https://formazione.arsdocendi.it/admin/tool/policy/viewall.php"
 EMAIL = "formazione@arsdocendi.it"
+CONTATTI = "https://formazione.arsdocendi.it/user/contactsitesupport.php"
 
 MENU = [
     ("", "Home"),
@@ -129,7 +130,7 @@ def componi(sorgente):
     percorso = meta["percorso"]
     # La 404 si serve a qualunque profondità: lì i percorsi partono dalla radice.
     su = "/" if sorgente.stem == "404" else "../" * percorso.count("/")
-    corpo = corpo.replace("{su}", su).replace("{piattaforma}", PIATTAFORMA).replace("{email}", EMAIL)
+    corpo = corpo.replace("{su}", su).replace("{piattaforma}", PIATTAFORMA).replace("{email}", EMAIL).replace("{contatti}", CONTATTI)
     titolo = meta["titolo"]
     pagina = f"""<!doctype html>
 <html lang="it">
