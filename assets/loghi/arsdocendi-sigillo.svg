@@ -1,0 +1,7 @@
+<!-- Ars Docendi. Lettere convertite in tracciati da Source Serif 4 (nome) e Source Sans 3 (payoff), SIL Open Font License 1.1. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="Ars Docendi">
+  <rect width="100" height="100" rx="6" fill="#1E3B30"/>
+  <path fill="#EEF3EF" d="M17,69 L17,28.91 L25,43.09 L25,61 Z"/>
+  <path fill="#EEF3EF" d="M83.3559,69 L17,69 L25,61 L54.6441,61 Z"/>
+  <path fill="#A65B37" d="M17,28.91 L83.3559,69 L54.6441,61 L25,43.09 Z"/>
+</svg>

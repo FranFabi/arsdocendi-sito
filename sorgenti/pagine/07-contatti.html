@@ -1,0 +1,42 @@
+<!-- percorso: contatti/ -->
+<!-- titolo: Contatti · Ars Docendi -->
+<!-- descrizione: Scrivi ad Ars Docendi per parlare del piano di formazione della tua scuola. -->
+<!-- invito: no -->
+
+<section class="capo-pagina">
+  <div class="contenitore">
+    <div class="occhiello">Contatti</div>
+    <h1>Parliamo del piano di formazione della tua scuola</h1>
+    <p>Scrivici di cosa hai bisogno: ti ricontattiamo per fissare un primo incontro, anche online.</p>
+  </div>
+</section>
+
+<section class="contenitore sezione">
+  <div class="contatti">
+    <div>
+      <h2 class="titolo-sezione" style="font-size:clamp(26px,2.6vw,32px)">Recapiti</h2>
+      <div class="recapiti">
+        <div class="recapito"><svg class="icona"><use href="#i-posta"/></svg><div><strong>Email</strong><br><a href="mailto:{email}">{email}</a></div></div>
+        <div class="recapito"><svg class="icona"><use href="#i-luogo"/></svg><div><strong>Sede</strong><br>Piazza Impastato 3, 87100 Cosenza</div></div>
+      </div>
+    </div>
+    <form class="riquadro modulo" data-modulo-contatti data-destinatario="{email}">
+      <div class="campo"><label for="nome">Nome e cognome</label><input id="nome" name="nome" autocomplete="name" required></div>
+      <div class="campo"><label for="ente">Istituto o ente</label><input id="ente" name="ente" autocomplete="organization" required></div>
+      <div class="campo"><label for="ruolo">Ruolo</label><input id="ruolo" name="ruolo" autocomplete="organization-title"></div>
+      <div class="campo"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div class="campo">
+        <label for="esigenza">Di cosa hai bisogno</label>
+        <select id="esigenza" name="esigenza">
+          <option>Formazione per il mio istituto</option>
+          <option>Progetto per una rete di scuole</option>
+          <option>Piattaforma dedicata</option>
+          <option>Altro</option>
+        </select>
+      </div>
+      <div class="campo"><label for="messaggio">Messaggio</label><textarea id="messaggio" name="messaggio"></textarea></div>
+      <button class="pulsante pulsante--primario pulsante--grande" type="submit">Prepara la mail<svg class="icona"><use href="#i-freccia"/></svg></button>
+      <p class="nota-modulo">Il modulo non invia dati a nessun server: apre il tuo programma di posta con il messaggio già scritto, da spedire a {email}.</p>
+    </form>
+  </div>
+</section>
