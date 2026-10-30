@@ -115,6 +115,7 @@ ul{margin:0;padding:0;list-style:none}
 
 /* Schede */
 .griglia-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.griglia-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px}
 .griglia-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px}
 @media (max-width:999px){.griglia-4{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:559px){.griglia-4{grid-template-columns:1fr}}
@@ -133,6 +134,12 @@ a.scheda:hover{transform:translateY(-4px);box-shadow:var(--shadow-2);color:var(-
 .scheda--pubblico .scheda__titolo{margin-top:0}
 .scheda__testo{font-size:var(--fs-sm);line-height:1.5}
 .scheda__testo--muto{color:var(--text-muted)}
+/* Schede delle pagine interne: più testo, con l'elenco delle spunte */
+.scheda--grande{padding:32px;gap:16px}
+.scheda--grande .scheda__titolo{margin-top:8px;font-size:var(--fs-xl)}
+.scheda--grande .scheda__testo{font-size:var(--fs-base);line-height:1.6}
+.scheda--grande .elenco-spunte{margin-top:4px;padding-top:20px;border-top:1px solid rgba(20,40,31,.1)}
+.scheda--grande:hover{transform:translateY(-4px);box-shadow:var(--shadow-2)}
 .scheda__link{display:flex;align-items:center;gap:8px;font:700 var(--fs-sm)/1.3 var(--font-sans);color:var(--green-800)}
 
 /* Fasi */
@@ -142,11 +149,24 @@ a.scheda:hover{transform:translateY(-4px);box-shadow:var(--shadow-2);color:var(-
 .fase h3{font-size:var(--fs-xl);line-height:1.3;margin-bottom:8px}
 .fase p{color:var(--text-muted)}
 
-/* Pagine interne */
-.capo-pagina{background:var(--green-50);border-bottom:1px solid var(--green-100)}
-.capo-pagina .contenitore{padding-top:72px;padding-bottom:56px}
-.capo-pagina h1{font-size:clamp(36px,4.6vw,56px);line-height:1.08;max-width:860px}
-.capo-pagina p{margin-top:20px;max-width:680px;font-size:var(--fs-lg);line-height:1.5;color:var(--text-muted)}
+/* Tappe di Come lavoriamo */
+.tappe{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;list-style:none;margin:0;padding:0}
+.tappa{position:relative;overflow:hidden;padding:36px 32px 32px;background:var(--surface-card);border:1px solid var(--green-100);border-top:4px solid var(--terra-500);border-radius:var(--radius-lg);box-shadow:var(--shadow-1);transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.tappa:hover{transform:translateY(-4px);box-shadow:var(--shadow-2)}
+.tappa__numero{display:flex;align-items:center;justify-content:center;width:56px;height:56px;margin-bottom:20px;border-radius:50%;background:var(--green-700);color:#fff;font:600 var(--fs-xl)/1 var(--font-serif)}
+.tappa h2{font-size:var(--fs-2xl);line-height:1.2;margin-bottom:12px}
+.tappa p{color:var(--text-muted)}
+
+/* Pagine interne: la stessa banda verde della home, con il segno in filigrana */
+.capo-pagina{background:var(--green-800);color:var(--green-50);position:relative;overflow:hidden}
+.capo-pagina::after{content:"";position:absolute;right:-90px;bottom:-110px;width:420px;height:420px;background:url(loghi/arsdocendi-segno-chiaro.svg) no-repeat right bottom/contain;opacity:.05;pointer-events:none}
+.capo-pagina > .contenitore{position:relative;z-index:1;padding-top:80px;padding-bottom:64px}
+.capo-pagina .numeri{z-index:1}
+.capo-pagina .occhiello{color:var(--terra-300)}
+.capo-pagina h1{font-size:clamp(36px,4.6vw,56px);line-height:1.08;letter-spacing:-0.02em;max-width:860px;color:#fff}
+.capo-pagina > .contenitore > p{margin-top:20px;max-width:680px;font-size:var(--fs-lg);line-height:1.5;color:var(--green-100)}
+.capo-pagina a{color:#fff}
+.capo-pagina a:hover{color:var(--terra-300)}
 
 .righe > *{padding:48px 0;border-bottom:1px solid var(--border-subtle)}
 .righe > *:last-child{border-bottom:0}
@@ -162,7 +182,7 @@ a.scheda:hover{transform:translateY(-4px);box-shadow:var(--shadow-2);color:var(-
 
 /* Referenze */
 .casi{display:grid;gap:24px}
-.caso{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:24px 48px;padding:32px;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-1)}
+.caso{transition:transform .2s var(--ease),box-shadow .2s var(--ease);display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:24px 48px;padding:32px;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-1)}
 @media (max-width:799px){.caso{grid-template-columns:1fr;padding:24px}}
 .caso__tipo{font:700 var(--fs-xs)/1.2 var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--terra-600);margin-bottom:8px}
 .caso h2{font-size:var(--fs-2xl);line-height:1.15;margin-bottom:6px}
@@ -173,6 +193,7 @@ a.scheda:hover{transform:translateY(-4px);box-shadow:var(--shadow-2);color:var(-
 .cifre{display:grid;gap:16px;align-content:start}
 .cifra{padding:16px 20px;border-left:4px solid var(--terra-500);background:var(--terra-50);border-radius:0 var(--radius-md) var(--radius-md) 0}
 .cifra__valore{font:600 var(--fs-2xl)/1 var(--font-serif);color:var(--green-800)}
+.caso:hover{transform:translateY(-4px);box-shadow:var(--shadow-2)}
 .cifra__etichetta{margin-top:6px;font-size:var(--fs-sm);color:var(--stone-700)}
 
 /* Chi siamo */
@@ -186,7 +207,7 @@ a.scheda:hover{transform:translateY(-4px);box-shadow:var(--shadow-2);color:var(-
 .contatti{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px}
 @media (max-width:899px){.contatti{grid-template-columns:1fr}}
 .recapiti{display:grid;gap:18px;margin-top:28px}
-.recapito{display:flex;gap:14px;align-items:flex-start}
+.recapito{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-1)}
 .recapito .icona{font-size:22px;margin-top:2px;color:var(--terra-500)}
 .modulo{display:grid;gap:18px}
 .campo{display:grid;gap:6px}
@@ -216,6 +237,7 @@ a.scheda:hover{transform:translateY(-4px);box-shadow:var(--shadow-2);color:var(-
 
 /* Animazioni: solo con lo script attivo e senza la preferenza per meno movimento */
 @media (prefers-reduced-motion:no-preference){
-  .js [data-compari]{opacity:0;transform:translateY(20px)}
-  .js [data-compari].visibile{opacity:1;transform:none;transition:opacity .64s var(--ease),transform .64s var(--ease);transition-delay:calc(var(--i,0) * 90ms)}
+  /* L'entrata usa translate, non transform: così il sollevamento delle schede al passaggio del mouse resta libero */
+  .js [data-compari]:not(.visibile){opacity:0;translate:0 20px}
+  .js [data-compari].visibile{transition:opacity .64s var(--ease) calc(var(--i,0) * 90ms),translate .64s var(--ease) calc(var(--i,0) * 90ms),transform .2s var(--ease),box-shadow .2s var(--ease)}
 }

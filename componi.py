@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Compone le pagine del sito da sorgenti/: testata, piede e icone sono scritti
-una volta sola qui, il contenuto di ogni pagina sta in sorgenti/pagine/.
+una volta sola qui, il contenuto di ogni pagina sta in sorgenti/pagine/ e i
+blocchi che ricorrono in più pagine in sorgenti/pezzi/, richiamati con {pezzo:nome}.
 
 Uso, dalla cartella del sito:  python3 componi.py
 Le pagine composte (index.html e <pagina>/index.html) si versionano: GitHub
@@ -12,6 +13,7 @@ import re
 
 RADICE = pathlib.Path(__file__).resolve().parent
 PAGINE = RADICE / "sorgenti" / "pagine"
+PEZZI = RADICE / "sorgenti" / "pezzi"
 
 PIATTAFORMA = "https://formazione.arsdocendi.it/login/"
 PRIVACY = "https://formazione.arsdocendi.it/admin/tool/policy/viewall.php"
@@ -130,6 +132,8 @@ def componi(sorgente):
     percorso = meta["percorso"]
     # La 404 si serve a qualunque profondità: lì i percorsi partono dalla radice.
     su = "/" if sorgente.stem == "404" else "../" * percorso.count("/")
+    # I blocchi comuni a più pagine (numeri, clienti, servizi, fasi) stanno una volta sola in sorgenti/pezzi/.
+    corpo = re.sub(r"\{pezzo:([\w-]+)\}", lambda m: (PEZZI / f"{m[1]}.html").read_text(encoding="utf-8").strip(), corpo)
     corpo = corpo.replace("{su}", su).replace("{piattaforma}", PIATTAFORMA).replace("{email}", EMAIL).replace("{contatti}", CONTATTI)
     titolo = meta["titolo"]
     pagina = f"""<!doctype html>

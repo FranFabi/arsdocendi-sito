@@ -13,63 +13,13 @@
       <a class="pulsante pulsante--chiaro pulsante--grande" href="{su}servizi/">Scopri i servizi</a>
     </div>
   </div>
-  <div class="numeri">
-    <div class="contenitore">
-      <div class="numeri__griglia">
-        <div class="numero"><div class="numero__valore" data-valore="2541">2.541</div><div class="numero__etichetta">docenti iscritti ai percorsi del Piano nazionale di formazione 2025/26 in Calabria</div></div>
-        <div class="numero"><div class="numero__valore" data-valore="450" data-suffisso="+">450+</div><div class="numero__etichetta">scuole da cui provengono i nostri corsisti</div></div>
-        <div class="numero"><div class="numero__valore" data-valore="72">72</div><div class="numero__etichetta">progetti realizzati con scuole e reti del territorio</div></div>
-        <div class="numero"><div class="numero__valore" data-valore="2927">2.927</div><div class="numero__etichetta">studenti coinvolti nei progetti con le scuole</div></div>
-      </div>
-    </div>
-  </div>
+  {pezzo:numeri}
 </section>
 
-<section class="clienti">
-  <div class="contenitore">
-    <div class="occhiello" style="color:var(--green-600)">Hanno lavorato con noi</div>
-    <div class="clienti__griglia">
-      <div class="cliente" data-compari style="--i:0"><span class="cliente__sigla" aria-hidden="true">SP</span><div><div class="cliente__nome">Scuola Polo Regionale Calabria</div><div class="cliente__sotto">Piano nazionale di formazione docenti</div></div></div>
-      <div class="cliente" data-compari style="--i:1"><span class="cliente__sigla" aria-hidden="true">A1</span><div><div class="cliente__nome">Ambito 1 di Cosenza</div><div class="cliente__sotto">Scuola Polo IC «Don Milani – De Matera»</div></div></div>
-      <div class="cliente" data-compari style="--i:2"><span class="cliente__sigla" aria-hidden="true">ITS</span><div><div class="cliente__nome">ITS Iridea Academy</div><div class="cliente__sotto">V.I.T.A., istruzione tecnologica superiore</div></div></div>
-    </div>
-  </div>
-</section>
+{pezzo:clienti}
 
 <section class="contenitore sezione">
-  <div class="intro-sezione">
-    <div>
-      <div class="occhiello">Cosa facciamo</div>
-      <h2 class="titolo-sezione">Un solo interlocutore per tutto il percorso formativo</h2>
-    </div>
-    <p>Progettiamo i contenuti, li eroghiamo sulla nostra piattaforma e ci occupiamo di iscrizioni, presenze, attestati e rendicontazione.</p>
-  </div>
-  <div class="griglia-4">
-    <a class="scheda scheda--servizio scheda--t1" href="{su}servizi/#progettazione" data-compari style="--i:0">
-      <span class="scheda__capo"><span class="scheda__icona"><svg class="icona"><use href="#i-progetto"/></svg></span><span class="scheda__numero">01</span></span>
-      <span class="scheda__titolo">Progettazione dei percorsi</span>
-      <span class="scheda__testo">Analizziamo i bisogni formativi e costruiamo percorsi coerenti con il piano di formazione della scuola.</span>
-      <span class="scheda__link">Scopri di più<svg class="icona"><use href="#i-freccia"/></svg></span>
-    </a>
-    <a class="scheda scheda--servizio scheda--t2" href="{su}servizi/#erogazione" data-compari style="--i:1">
-      <span class="scheda__capo"><span class="scheda__icona"><svg class="icona"><use href="#i-schermo"/></svg></span><span class="scheda__numero">02</span></span>
-      <span class="scheda__titolo">Erogazione online</span>
-      <span class="scheda__testo">Incontri in diretta, laboratori e attività sulla nostra piattaforma, utilizzabile anche da smartphone.</span>
-      <span class="scheda__link">Scopri di più<svg class="icona"><use href="#i-freccia"/></svg></span>
-    </a>
-    <a class="scheda scheda--servizio scheda--t3" href="{su}servizi/#piattaforma" data-compari style="--i:2">
-      <span class="scheda__capo"><span class="scheda__icona"><svg class="icona"><use href="#i-edificio"/></svg></span><span class="scheda__numero">03</span></span>
-      <span class="scheda__titolo">Piattaforma dedicata</span>
-      <span class="scheda__testo">Uno spazio riservato al tuo istituto o alla tua rete, con i corsi del tuo personale.</span>
-      <span class="scheda__link">Scopri di più<svg class="icona"><use href="#i-freccia"/></svg></span>
-    </a>
-    <a class="scheda scheda--servizio scheda--t4" href="{su}servizi/#attestati" data-compari style="--i:3">
-      <span class="scheda__capo"><span class="scheda__icona"><svg class="icona"><use href="#i-attestato"/></svg></span><span class="scheda__numero">04</span></span>
-      <span class="scheda__titolo">Attestati e rendicontazione</span>
-      <span class="scheda__testo">Registro presenze, attestati al completamento e report pronti per la rendicontazione.</span>
-      <span class="scheda__link">Scopri di più<svg class="icona"><use href="#i-freccia"/></svg></span>
-    </a>
-  </div>
+  {pezzo:servizi}
 </section>
 
 <section class="sezione sezione--verde">
@@ -97,17 +47,5 @@
 </section>
 
 <section class="contenitore sezione">
-  <div class="intro-sezione">
-    <div>
-      <div class="occhiello">Come lavoriamo</div>
-      <h2 class="titolo-sezione">Quattro fasi, un referente dedicato</h2>
-    </div>
-    <p><a href="{su}come-lavoriamo/">Scopri il metodo</a></p>
-  </div>
-  <ol class="fasi" style="list-style:none;padding:0;margin:0">
-    <li class="fase" data-compari style="--i:0"><div class="fase__numero">01</div><h3>Ascolto</h3><p>Incontriamo dirigente e referenti.</p></li>
-    <li class="fase" data-compari style="--i:1"><div class="fase__numero">02</div><h3>Progetto</h3><p>Proponiamo percorso e calendario.</p></li>
-    <li class="fase" data-compari style="--i:2"><div class="fase__numero">03</div><h3>Erogazione</h3><p>Corsi online e in aula, seguiti dai nostri tutor.</p></li>
-    <li class="fase" data-compari style="--i:3"><div class="fase__numero">04</div><h3>Rendicontazione</h3><p>Presenze, attestati e report finali.</p></li>
-  </ol>
+  {pezzo:fasi}
 </section>
